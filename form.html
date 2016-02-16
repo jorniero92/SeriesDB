@@ -1,0 +1,91 @@
+<!DOCTYPE html> <!-- De claracion de html -->
+<html>
+<head>
+	<meta charset="utf-8"> <!-- Para que salgan los acentos -->
+	<title>Nueva Película</title>
+</head>
+<body>
+	
+	<h1> Nueva Película</h1>
+	<!-- lo formularios en HTML5 no se validan, se hacen con JavaScript -->
+	<form novalidate>
+		<div>
+			<input type="text" id="title" name="title" placeholder="Titulo de la Serie" required>
+		</div>
+		<div>
+			<input type="url" id="cover_url" name="cover_url" placeholder="URL de la imagen de portada" pattern="^https?://[a-z0-9]+\.[a-z0-9]+/.+" required>
+			<!-- pattern es para las excepciones de las clases regulares--> 
+			<!-- despues del + puedes poner 1 o mas caracteres-->
+		</div>
+
+		<div>
+			<textarea id="plot" name="plot" placeholder="Argumento de la serie"></textarea>
+		</div>
+
+		<div>
+			<label for="date">Fecha de primera emisión</label>
+			<input type="date" id="date" name="date" required> 
+		</div>
+
+		<div>
+			<h4>Categorías</h4>
+			<li>
+				<label>
+					<input type="checkbox" name="category" value="Drama"> Drama
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" name="category" value="Action"> Acción
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" name="category" value="Humor"> Humor
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" name="category" value="Sci-fi"> Ciencia Ficción
+				</label>
+			</li>
+			<li>
+				<label>
+					<input type="checkbox" name="category" value="Sports"> Deportes
+				</label>
+			</li>
+		</div>
+
+		<div>
+			<h4> Clasificacion por edad</h4>
+			<ul>
+				<li>
+					<label>
+						<input type="radio" name="age_cal" value="all" required> Todos los publicos
+				</li>
+				<li>
+					<label>
+						<input type="radio" name="age_cal" value="gt7" required> Mayores de 7 años
+				</li>
+				<li>
+					<label>
+						<input type="radio" name="age_cal" value="gt12" required> Mayores de 12 años
+				</li>
+				<li>
+					<label>
+						<input type="radio" name="age_cal" value="gt18" required> Mayores de 18 años
+				</li>
+
+			</ul>
+		<div>
+			<h4> Puntuación </h4>
+			<input type="range" id="rating" name="rating" min="0" max="10" step="1" value="0" required> <!-- si pone required es un campo obligatorio-->
+		</div>
+
+		<div>
+			<button type="submit"> Crear Serie</button>
+		</div>	
+
+	</form>	
+</body>
+</html>
