@@ -7,34 +7,48 @@
 	</head>
 	<body>
 		<header class="web header">
+			<div class="container">
+				<div class="row">					
+			
+					<div class="col-3">
+						<div class="brand"> Series DB </div>
+					</div>
+					<div class="col-6">
+						<nav class="main menu"> <!--enlaces de navegacion por la pagina-->
+							<!--listado de categorias-->
+							<ul>
+								<li> <!--li es un salto de linea-->
+									<a href="#" title="Descubre series y películas a tu gusto">Descubrir</a>
+								</li>
+				<!-- con el title damos una descripcion  y  con "Películas" es el txt q sale en la web-->
+								<li>
+									<a href="#" title="Catálogo de películas">Películas</a>
+								</li>
+								<li>
+									<a href="#" title="Catálogo de series">Series</a>
+								</li>
+								<li>
+									<a href="#" title="Listado de actores y actrices de seies y películas">Actores y actrices</a>
+								</li>
+							</ul>
+							<!--nav elemento de navegacion-->
+						</nav>
+					</div>
+					<div class="col-3">
+						<form class="search form">
+							<!-- los input no se cierran -->
+							<input type="search" id="search" name="q" placeholder="Buscar...">
+							<button type="search">Buscar</button>
+						</form>
+					</div>
+				</div>
+
 			<!-- div no tiene contenido -->
 			<!-- Tiene dos clases: logo y brand.  Para hacer referencia a este .logo.brand -->
 			<!-- <div class="logo brand">Series DB</div>   -->
-			<div class="brand">Series DB</div>
-			<nav>
-				<!--listado de categorias-->
-				<ul>
-					<li> <!--li es un salto de linea-->
-						<a href="#" title="Descubre series y películas a tu gusto">Descubrir</a>
-					</li>
-	<!-- con el title damos una descripcion  y  con "Películas" es el txt q sale en la web-->
-					<li>
-						<a href="#" title="Catálogo de películas">Películas</a>
-					</li>
-					<li>
-						<a href="#" title="Catálogo de series">Series</a>
-					</li>
-					<li>
-						<a href="#" title="Listado de actores y actrices de seies y películas">Actores y actrices</a>
-					</li>
-				</ul>
-				<!--nav elemento de navegacion-->
-			</nav>
-			<form class="search form">
-				<!-- los input no se cierran -->
-				<input type="search" id="search" name="q" placeholder="Buscar...">
-				<button type="search">Buscar</button>
-			</form>
+			</div>
+			
+			
 		</header>
 
 	<!--ponerlo entre main xq es la parte principal de la pagina-->

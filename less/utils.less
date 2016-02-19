@@ -1,0 +1,26 @@
+/*clases que vamos a usar mucho */
+
+// solucion al problema de la cabecera para pintarla de color
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//elementos flotantes
+
+/* clase abstracta */
+.horizontal-list(){
+
+	list-style-type: none;
+	/* quitar espacios de padding y margin */
+	padding: 0;
+	margin: 0;
+	/* que la lista se vea en horizontal */
+	li{display:inline;}
+}
