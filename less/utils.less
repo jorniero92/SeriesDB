@@ -30,3 +30,11 @@
 	width: 100%;
 	max-width: 100%;
 }
+
+
+.if-is-mobile(@rules){
+	//cuando el tamaño del escritorio es mas pequeño de 1px
+	@media screen and(max-width: (@desktop-width - 1)){
+		@rules();
+	}
+}

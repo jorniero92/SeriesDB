@@ -1,18 +1,14 @@
 //al media item le decimos que es imagen responsive para autoajuste
 .media.item{
-	height: 235px;
 	margin-bottom: 10px;
-	overflow: hidden; //el excedente del contenido lo oculta
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	box-shadow: 0 0 10px #ccc;
 	.cover{overflow: hidden;}
-	&:hover{
-		img{
-			transform: scale(1.2);
-		}
-	}
-	.link{
-		color: black;
-
-	}
+	
+	.link{ color: black; }
+	
 	img{ 
 		transition: transform 250ms;
 		.img-responsive(); 
@@ -39,4 +35,13 @@
 			display: inline;
 			margin-left: 20px;
 		}
+		.video{ 
+			//aplicar la animacion
+			animation: bounceInDown 2s;
+			height: 451px;
+			width: 100%;
+			background: black;
+			//transform:rotateY(-50deg);
+		}
+		.video-wrapper{perspective:2000px;}
 }

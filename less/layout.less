@@ -4,16 +4,25 @@
 	// defino el ancho del contenedor
 	width: @desktop-width;
 	margin: auto;
+	.if-is-mobile({
+		width: 100%;
+		})
 }
 
 //poner el grid
 //generador de grid segun el numero de columnas, esto es un bucle.
 .grid-generator(@columns, @i: 1) when (@i <= @columns) {
 	.col-@{i}{
+		//dentro de la generacion de cada dispositivo aplicamos los diferentes estilos
+		
 		width: @i*(100% / @columns);
 		//todos a la izquierda
 		float: left;
 		display: block;
+		.if-is-mobile({
+			width: 100%;
+		});
+
 	}
 	//llamada recursiva para recorrer el bucle de 1 en 1
 	.grid-generator(@columns, (@i + 1));
@@ -21,6 +30,7 @@
 // (100% / 12) *2 -> ocupa 2 columnas de las 12 posibles
 
 .row{
+
 	.clearfix();
 	//elementos de columna dentro de esta clase
 
