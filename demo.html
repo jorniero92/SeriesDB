@@ -6,18 +6,21 @@
 	</head>
 
 	<body>
+
 		<div id="container" style="background: blue"> 
 			<div id="content" style="background: green"> This is the content </div>	
 		</div>
 		<script>
 			document.getElementById('container').addEventListener('click', function(){
 				console.log("CONTAINER CLICKED");
-			});
+			}, true);
 
 			document.getElementById('content').addEventListener('click', function(){
 				console.log("content clicked");
 			});
-
+			document.body.addEventListener('click', function(event){
+				console.log("BODY clicked");
+			}, true);
 		</script>
 	</body>
 
