@@ -1,0 +1,34 @@
+<!DOCTYPE html> <!-- De claracion de html -->
+<html> <!---->
+	<head>
+		<meta charset="utf-8"> <!-- Para que salgan los acentos -->
+		<title>Document</title>	
+	</head>
+
+	<body>
+		<div id="demo"> Hellow world </div>
+		<button id="updateDateButton"> Update date</button>
+		<button id="addListennerButton">Add listener</button>
+		<button id="removeListennerButton">Remove listener</button>
+		<!-- en HTML es directamente JavaScript-->
+		<!-- <script type="JavaScript"> -->
+		<script>
+			function updateDate(){
+				document.getElementById('demo').innerHTML=new Date();
+			}
+			function addListener(){
+				//cogemos el boton y cuando se hace 'click'c se ejecuta updateDate
+				document.getElementById('updateDateButton').addEventListener('click', updateDate);
+			}
+			function removeListenner(){
+				document.getElementById('updateDateButton').removeEventListener('click', updateDate);
+			}
+			
+			document.getElementById('addListennerButton').addEventListener('click', addListener);
+
+			document.getElementById('removeListennerButton').addEventListener('click', removeListenner);
+
+		</script>
+	</body>
+
+</html>
