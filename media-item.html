@@ -2,63 +2,91 @@
 <html> <!---->
 	<head>
 		<meta charset="utf-8"> <!-- Para que salgan los acentos -->
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> 
 		<title>Series DB</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<header class="web header">
+			<div class="container">
+				<div class="row">					
+			
+					<div class="col-3">
+						<div class="brand"> Series DB </div>
+					</div>
+					<div class="col-6">
+						<nav class="main menu"> <!--enlaces de navegacion por la pagina-->
+							<!--listado de categorias-->
+							<ul>
+								<li> <!--li es un salto de linea-->
+									<a href="#" title="Descubre series y películas a tu gusto">Descubrir</a>
+								</li>
+				<!-- con el title damos una descripcion  y  con "Películas" es el txt q sale en la web-->
+								<li>
+									<a href="#" title="Catálogo de películas">Películas</a>
+								</li>
+								<li>
+									<a href="#" title="Catálogo de series">Series</a>
+								</li>
+								<li>
+									<a href="#" title="Listado de actores y actrices de seies y películas">Actores y actrices</a>
+								</li>
+							</ul>
+							<!--nav elemento de navegacion-->
+						</nav>
+					</div>
+					<div class="col-3">
+						<form class="search form">
+							<!-- los input no se cierran -->
+							<input type="search" id="search" name="q" placeholder="Buscar...">
+							<button type="search">Buscar</button>
+						</form>
+					</div>
+				</div>
+
 			<!-- div no tiene contenido -->
 			<!-- Tiene dos clases: logo y brand.  Para hacer referencia a este .logo.brand -->
 			<!-- <div class="logo brand">Series DB</div>   -->
-			<div class="brand">Series DB</div>
-			<nav>
-				<!--listado de categorias-->
-				<ul>
-					<li> <!--li es un salto de linea-->
-						<a href="#" title="Descubre series y películas a tu gusto">Descubrir</a>
-					</li>
-	<!-- con el title damos una descripcion  y  con "Películas" es el txt q sale en la web-->
-					<li>
-						<a href="#" title="Catálogo de películas">Películas</a>
-					</li>
-					<li>
-						<a href="#" title="Catálogo de series">Series</a>
-					</li>
-					<li>
-						<a href="#" title="Listado de actores y actrices de seies y películas">Actores y actrices</a>
-					</li>
-				</ul>
-				<!--nav elemento de navegacion-->
-			</nav>
-			<form class="search form">
-				<!-- los input no se cierran -->
-				<input type="search" id="search" name="q" placeholder="Buscar...">
-				<button type="search">Buscar</button>
-			</form>
+			</div>
+			
+			
 		</header>
 
 		<main class="web main series media item detail">
-			
-			<header class="serie media header">
-				<h1 class="serie media title">Supernatural</h1>
-				<img src="https://image.tmdb.org/t/p/w185/3iFm6Kz7iYoFaEcj4fLyZHAmTQA.jpg" alt="Supernatural Wrestle Your Dreams" title="Carátula de Supernatural">
-			</header>
-				<div class="categories">
-					<ul>
-						<li>Drama</li>
-						<li>Misterio</li>
-					</ul>
+			<div class="container">
+				<header class="series media header">
+					<h1 class="serie media title">Supernatural</h1>
+					
+				</header>
+				<div class="row">
+					<div class="col-3">
+						<div class="cover">
+							<img src="https://image.tmdb.org/t/p/w185/3iFm6Kz7iYoFaEcj4fLyZHAmTQA.jpg" alt="Supernatural Wrestle Your Dreams" title="Carátula de Supernatural">
+						</div>
+						<div class="meta">
+							<time class="release date" datetime="2005-03-12">2005</time>
+							<div class="rating">7.1</div>
+						</div>
+					</div>
+					<div class="col-9">
+						<div class="video-wrapper">
+							<video class="video trailer" controls muted loop poster="https://image.tmdb.org/t/p/w185/3iFm6Kz7iYoFaEcj4fLyZHAmTQA.jpg">
+								<source src="http://movietrailers.apple.com/movies/wb/batmanvsuperman/batmanvssuperman-us-tlr4_i320.m4v" type="video/mp4">
+							</video>
+						</div>
+					<div class="meta">
+						<div class="categories">
+							<ul>
+								<li>Drama</li>
+								<li>Misterio</li>
+							</ul>
+						</div>
+					</div>
 				</div>
 
-				<time class="release date" datetime="2005-03-12">2005</time>
-				<div class="rating">7.1</div>
-				<p class="overview" >Cuando eran niños, Sam y Dean Winchester, perdieron a su madre debido a una misteriosa y demoníaca fuerza supernatural. Posteriormente, su padre los crió para que fueran soldados. Él les enseño sobre el mal que vive en los rincones obscuros y en las carreteras secundarias de América... y también les enseñó como matarlo. Ahora los hermanos Winchester recorren el país en su Chevy Impala del '67, luchando contra todo tipo de amenaza sobrenatural que encuentran en el camino.</p>
-				<video class="video trailer" controls autoplay muted loop>
-					<source src="http://movietrailers.apple.com/movies/wb/batmanvsuperman/batmanvssuperman-us-tlr4_i320.m4v" type="video/mp4">
-				</video>
-					
-			</article>
-
-
+				</div>
+					<p class="overview" >Cuando eran niños, Sam y Dean Winchester, perdieron a su madre debido a una misteriosa y demoníaca fuerza supernatural. Posteriormente, su padre los crió para que fueran soldados. Él les enseño sobre el mal que vive en los rincones obscuros y en las carreteras secundarias de América... y también les enseñó como matarlo. Ahora los hermanos Winchester recorren el país en su Chevy Impala del '67, luchando contra todo tipo de amenaza sobrenatural que encuentran en el camino.</p>
+			</div>
 		</main>
 
 		<footer class="web footer">

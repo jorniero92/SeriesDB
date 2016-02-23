@@ -16,7 +16,7 @@
  					files: ['less/*.less'], // cuando cambie cualquier archivo .less
  					tasks: ['less'], // ejecuta la tarea less  
  					options: {
- 						spawn: false //para que no se quede tostado, ir mas rapido
+ 						 spawn: false //para que no se quede tostado, ir mas rapido
  					}
  				}
  			}

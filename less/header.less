@@ -1,0 +1,45 @@
+.web.header{
+	background: @adrift-in-dreams;
+	.brand{
+		font-size: 25px;
+		font-family: @titles-font-family;
+	}
+	.main.menu{
+		ul{
+			.horizontal-list();
+			text-align: center;
+			margin-right: 4px;
+			li{margin-left: -4px;}
+			a{
+				color: white;
+				display: inline-block;
+				//quitamos el subrayado
+				text-decoration: none;
+				//dar forma de boton
+				background-color: darken(@cherry-pink, 30%);
+				//pading horizontal mayor que el vertical
+				padding: 10px 20px;
+				transition: background 250ms;
+
+				&:hover{
+					color: black;
+					background: darken(@cherry-pink, 10%);
+				}
+
+			}
+		}
+		.if-is-mobile({
+			display: none;
+
+		});	
+
+	}
+	.form.search{
+		margin-top: 8px;
+		.if-is-mobile({
+			display: none;
+
+		});	
+	}
+		
+}	

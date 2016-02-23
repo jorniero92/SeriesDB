@@ -1,40 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:700|Source+Serif+Pro:400,600,700);
-
-h1,h2,h3,h4,h5,h6{
-font-family: 'Droid Serif', serif;
-}
-
-body{
-font-family: 'Source Serif Pro', serif;
-}
-
-.media.link{
-	transition: background 250ms, box-shadow 2s ;
-	background: white;
-	/*box-shadow: de fuera y luego el de dentro */
-	box-shadow: 0 5px 10px #bbbbbb, inset 0 0 0 0 #ffffff;
-	display: block;
-	margin: 50px;
-	padding: 50px;
-
-}
-
-/* imagenes que esten dentro de la clase media y link */
-.media.link img{
-	display: none;
-}
-
-/* hover al poner el raton encima */
-.media.link:hover{
-	background: gold;
-	box-shadow:0 0 0 0 #ffffff, inset 0 5px 10px #bbbbbb;
-};
-
-.media.link:hover img{
-	display:block;
-}
-
-/* AL hace click*/
-.media.link:active{	
-
-}
+@import "fonts.less";
+@import "variables.less";
+@import "html-tags.less";
+@import "utils.less";
+@import "header.less";
+@import "layout.less";
+@import "media-item.less";
+@import "media-list.less";
+@import "animation.less";

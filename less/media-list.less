@@ -1,0 +1,14 @@
+.media.list{
+	.media.item{
+		height: 235px;
+		overflow: hidden; //el excedente del contenido lo oculta
+		.if-is-mobile({
+			height: auto;
+		});
+		&:hover{
+			img{ 
+				transform: scale(1.2); 
+			}
+		}
+	}
+}
