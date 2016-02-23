@@ -7,25 +7,15 @@
 
 	<body>
 		<div id="demo"> Hellow world </div>
-		<button id="updateDateButton"> Update date</button>
-		<button id="addListennerButton">Add listener</button>
-		<button id="removeListennerButton">Remove listener</button>
+		<button id="saveButton"> Save </button>
 		<!-- en HTML es directamente JavaScript-->
 		<!-- <script type="JavaScript"> -->
 		<script>
-			function updateDate(){
-				console.log("updateDate", arguments);
-				document.getElementById('demo').innerHTML=new Date();
-			}
 			
-			document.getElementById('addListennerButton').addEventListener('click', function(){
-				console.log("addListennerButton", arguments);
-				document.getElementById('updateDateButton').addEventListener('click', updateDate);
-			});
-
-			document.getElementById('removeListennerButton').addEventListener('click', function(){
-				console.log("removeListennerButton", arguments);
-				document.getElementById('updateDateButton').removeEventListener('click', updateDate);
+			document.getElementById('demo').contentEditable=true;
+			
+			document.getElementById('saveButton').addEventListener('click', function(evt){
+				console.log("contenido", document.getElementById('demo').innerHTML);
 			});
 
 		</script>
