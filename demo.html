@@ -7,9 +7,12 @@
 
 	<body>
 
-		<div id="container" style="background: blue"> 
-			<div id="content" style="background: green"> This is the content </div>	
+		<div id="container" style="background: blue;"> 
+			<div id="content" style="background: green;"> 
+				This is the content 
+			</div>	
 		</div>
+		<a href="http://www.google.com/" target="_blank">ir a Google</a>
 		<script>
 			document.getElementById('container').addEventListener('click', function(){
 				console.log("CONTAINER CLICKED");
@@ -21,6 +24,11 @@
 			document.body.addEventListener('click', function(event){
 				console.log("BODY clicked");
 			}, true);
+			//este elemento devuelve un array y accedo a su primera posicion
+			document.getElementsByTagName("a")[0].addEventListener('click', function(event){
+				console.log("Google link");
+				event.preventDefault();
+			});
 		</script>
 	</body>
 
