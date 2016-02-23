@@ -14,19 +14,19 @@
 		<!-- <script type="JavaScript"> -->
 		<script>
 			function updateDate(){
+				console.log("updateDate", arguments);
 				document.getElementById('demo').innerHTML=new Date();
 			}
-			function addListener(){
-				//cogemos el boton y cuando se hace 'click'c se ejecuta updateDate
-				document.getElementById('updateDateButton').addEventListener('click', updateDate);
-			}
-			function removeListenner(){
-				document.getElementById('updateDateButton').removeEventListener('click', updateDate);
-			}
 			
-			document.getElementById('addListennerButton').addEventListener('click', addListener);
+			document.getElementById('addListennerButton').addEventListener('click', function(){
+				console.log("addListennerButton", arguments);
+				document.getElementById('updateDateButton').addEventListener('click', updateDate);
+			});
 
-			document.getElementById('removeListennerButton').addEventListener('click', removeListenner);
+			document.getElementById('removeListennerButton').addEventListener('click', function(){
+				console.log("removeListennerButton", arguments);
+				document.getElementById('updateDateButton').removeEventListener('click', updateDate);
+			});
 
 		</script>
 	</body>
