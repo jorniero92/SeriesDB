@@ -1,21 +1,21 @@
 <!DOCTYPE html> <!-- De claracion de html -->
-<html> <!---->
+<html lang="en"> <!---->
 	<head>
 		<meta charset="utf-8"> <!-- Para que salgan los acentos -->
 		<title>Document</title>	
 	</head>
 
 	<body>
-		<div id="demo"> Hellow world </div>
-		<button id="saveButton"> Save </button>
-		<!-- en HTML es directamente JavaScript-->
-		<!-- <script type="JavaScript"> -->
+		<div id="container" style="background: blue"> 
+			<div id="content" style="background: green"> This is the content </div>	
+		</div>
 		<script>
-			
-			document.getElementById('demo').contentEditable=true;
-			
-			document.getElementById('saveButton').addEventListener('click', function(evt){
-				console.log("contenido", document.getElementById('demo').innerHTML);
+			document.getElementById('container').addEventListener('click', function(){
+				console.log("CONTAINER CLICKED");
+			});
+
+			document.getElementById('content').addEventListener('click', function(){
+				console.log("content clicked");
 			});
 
 		</script>
