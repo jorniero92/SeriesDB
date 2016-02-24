@@ -24,7 +24,7 @@ $(document).ready(function(){ // cuando la pagina se ha cargao por completo
 
 		//validacion de que como mínimo tiene q tener 1 categoria marcada
 		//validacion de categorias
-		//elementos que tengan el nombre "category"
+								  //elementos que tengan el nombre "category"
 		var selectedCategories = $('input[name="category"]:checked');
 		if(  selectedCategories.length == 0){
 			alert("Seleccion al menos una categoria");
@@ -32,8 +32,30 @@ $(document).ready(function(){ // cuando la pagina se ha cargao por completo
 		}
 
 
+		//hacer peticion ajax para enviarlo
+		$.ajax({
+			url: "/api/series",
+			data: JSON.stringify({
+				title: title, 
+				url: url
+			}),
+			dataType: 'json',
+			contentType: 'application/json',
+			method: 'post',
+			success : function(){
+				alert("Guardado con exito")
+			},
+			error: function(){
+				alert("Ha surgido algun problema al guardar")
+			}
+		});
+
+
 		//alert("Enviando formulario para probarlo");
 		return false; //jquery cancela el formulario. Esta mal validado en algun punto
+
+		
+
 	});
 
 });
