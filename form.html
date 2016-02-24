@@ -10,7 +10,7 @@
 	<!-- lo formularios en HTML5 no se validan, se hacen con JavaScript -->
 	<form novalidate>
 		<div>
-			<input type="text" id="title" name="title" placeholder="Titulo de la Serie" required>
+			<input type="text" id="title" class="auto-focus" name="title" placeholder="Titulo de la Serie" required>
 		</div>
 		<div>
 			<input type="url" id="cover_url" name="cover_url" placeholder="URL de la imagen de portada" pattern="^https?://[a-z0-9]+\.[a-z0-9]+/.+" required>
@@ -61,7 +61,7 @@
 			<ul>
 				<li>
 					<label>
-						<input type="radio" name="age_cal" value="all" required> Todos los publicos
+						<input type="radio" name="age_cal" value="all" required checked> Todos los publicos
 				</li>
 				<li>
 					<label>
@@ -87,5 +87,8 @@
 		</div>	
 
 	</form>	
+	<!-- incluir codigo JavaScript desde fera -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/src/app.js"></script>
 </body>
 </html>
