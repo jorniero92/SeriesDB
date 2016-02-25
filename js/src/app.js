@@ -46,6 +46,7 @@ $(document).ready(function(){ // cuando la pagina se ha cargao por completo
 			//la forma de avisa al servidor de el idioma con el que hablas
 			contentType: 'application/json', 
 			success : function(){
+				reloadSeries();
 				alert("Guardado con exito")
 			},
 			error: function(){
@@ -56,6 +57,64 @@ $(document).ready(function(){ // cuando la pagina se ha cargao por completo
 		//alert("Enviando formulario para probarlo");
 		return false; //jquery cancela el formulario. Esta mal validado en algun punto
 
+	});
+	
+	
+	function reloadSeries(){
+		console.log("Cargando Series");
+		//configuro una accion pero la realiza cuando quiera
+		$.ajax({
+			//en get no hace falta decirle que es JSON
+			url: "/api/series/",
+			success: function(data){
+				console.log("Series recuperadas", data);
+				var html = "";
+				for(var i in data){
+					var id = data[i].id;
+					var title = data[i].title;
+					var url = data[i].url || "";
+					html += "<li>";
+					html += title;
+					if(url.length > 0)
+						html += " (" + url + ") ";
+					html += '<button data-serieid="'+ id+ '"> Eliminar</button>"';
+					html += "</li>";
+				}
+				$("#seriesList").html(html);
+			}
+		});
+	}
+
+	//sin parentesis uso la funcion para que la llame cuando le haga falta
+	//con parentesis ejecuta la funcion
+	$("#reloadSeriesButton").on("click", reloadSeries);
+
+	/*	si lleva parametros la funcion --> llamamos a una funcion anonima
+
+		$("#reloadSeriesButton").on("click", function(){
+			reloadSeries(user, pass);
+		});
+	*/
+
+	reloadSeries();
+
+	// llama a cualquier boton dentro de "seriesList"
+	// asi llama al padre y cuando salga el boton y se clicke que se elimine
+	$("#seriesList").on("click","button", function(){
+		console.log("Elimino la serie");
+		var self = this; //this es el elemento
+		var id = $(self).data("serieid"); // cojo el valor del atributo data-serieid del boton
+		$.ajax({
+			url: "/api/series/" + id,
+			method: "delete",
+			success: function (){ //llamamda asincrona
+				//elimino el elemento del DOM
+				//si voy al padre del boton estoy en el <li>
+				$(self).parent().remove();
+
+
+			}
+		});
 	});
 
 });

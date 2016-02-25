@@ -10,3 +10,9 @@ bower_components/
 
 # CCS
 style.css
+
+# archivos db
+db/
+
+#python
+*.py*
