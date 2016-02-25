@@ -31,17 +31,20 @@ $(document).ready(function(){ // cuando la pagina se ha cargao por completo
 			return false;
 		}
 
-
-		//hacer peticion ajax para enviarlo
-		$.ajax({
-			url: "/api/series",
-			data: JSON.stringify({
+		//hacer peticion ajax para enviarlo, se envia de golpe
+		$.ajax({	//interconexion de backend y frontend
+			// POST = envio datos
+			method: 'post', 
+			// a la peticion le paso un link
+			url: "/api/series/", 
+			//Le das undiccionaro, a modo de converion de string a Json
+			data: JSON.stringify({	
+				// los atos que le das
 				title: title, 
 				url: url
 			}),
-			dataType: 'json',
-			contentType: 'application/json',
-			method: 'post',
+			//la forma de avisa al servidor de el idioma con el que hablas
+			contentType: 'application/json', 
 			success : function(){
 				alert("Guardado con exito")
 			},
@@ -50,11 +53,8 @@ $(document).ready(function(){ // cuando la pagina se ha cargao por completo
 			}
 		});
 
-
 		//alert("Enviando formulario para probarlo");
 		return false; //jquery cancela el formulario. Esta mal validado en algun punto
-
-		
 
 	});
 
