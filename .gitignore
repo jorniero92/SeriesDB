@@ -1,8 +1,18 @@
 # Node modules
 node_modules/
 
+
+# Bower modules
+bower_components/
+
 # Archivos del SO
 
 
 # CCS
 style.css
+
+# archivos db
+db/
+
+#python
+*.py*

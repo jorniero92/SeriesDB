@@ -10,7 +10,7 @@
 	<!-- lo formularios en HTML5 no se validan, se hacen con JavaScript -->
 	<form novalidate>
 		<div>
-			<input type="text" id="title" name="title" placeholder="Titulo de la Serie" required>
+			<input type="text" id="title" class="auto-focus" name="title" placeholder="Titulo de la Serie" required>
 		</div>
 		<div>
 			<input type="url" id="cover_url" name="cover_url" placeholder="URL de la imagen de portada" pattern="^https?://[a-z0-9]+\.[a-z0-9]+/.+" required>
@@ -61,7 +61,7 @@
 			<ul>
 				<li>
 					<label>
-						<input type="radio" name="age_cal" value="all" required> Todos los publicos
+						<input type="radio" name="age_cal" value="all" required checked> Todos los publicos
 				</li>
 				<li>
 					<label>
@@ -77,15 +77,27 @@
 				</li>
 
 			</ul>
+		</div>
 		<div>
 			<h4> Puntuación </h4>
 			<input type="range" id="rating" name="rating" min="0" max="10" step="1" value="0" required> <!-- si pone required es un campo obligatorio-->
 		</div>
 
 		<div>
+			<!--con el tipo submit hace que sea especial-->
 			<button type="submit"> Crear Serie</button>
 		</div>	
 
 	</form>	
+	
+	<hr>
+	
+	<button id="reloadSeriesButton">Recargar Series</button>
+	<ul id="seriesList">
+		<li>No hay Series</li>
+	</ul>
+<!-- incluir codigo JavaScript desde fera -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="js/src/app.js"></script>
 </body>
 </html>
